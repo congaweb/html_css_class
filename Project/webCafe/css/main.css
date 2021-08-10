@@ -1,75 +1,124 @@
-*, *::before, *::after{
+@import url(./fonts.css);
+
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
-body{
+a{
+    text-decoration: none;
+    color: inherit;
+}
+body {
+    font-family: 'Spoqa Han Sans Neo', sans-serif;
+    font-weight: 400;
     margin: 0;
 }
-.container{
+
+.container {
     background-color: gray;
 }
-.header, .visual, .main, .slogan{
+
+.header,
+.visual,
+.main,
+.slogan {
     width: 940px;
     margin: 0 auto;
 }
-.header{
-    background-color: blue;
+
+.header {
+    background-color: #fff;
     position: relative;
+    border-radius: 0 0 15px 15px;
+    padding: 0 30px 40px;
 }
-.logo{
+
+.logo {
+    margin-top: 0;
+    margin-bottom: 0;
     position: absolute;
-    left: 0;
-    right: 0;
-    text-align: center;
-    margin: 0;
+    top: 45px;
+    left: 65px;
+    font-size: 1rem;
+    line-height: 1;
 }
+.logo a, .logo img{
+    display: block;
+}
+
+/* 안내 링크 */
 .member-service{
+    /* display: flex;
+    justify-content: flex-end; */
     list-style: none;
-    display: flex;
+    margin:0;
     padding-left: 0;
+    font-size: 0;
+    line-height: 0;
+    text-align: right;
+    padding: 2px 0;
 }
 .member-service li{
-    padding:0.5em;
+    display: inline-block;
+    font-size: 0.875rem;
+    line-height: 1.15;
+}
+.member-service li a{
+    display: inline-block;
+    padding: 8px;
     text-transform: uppercase;
 }
-.member-service li:nth-child(3){
-    margin-right: auto;
+.member-service li:nth-child(n+2):before{
+    content: ':';
 }
-.member-service a{
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.5em;;
+.visual {
+    background-color: #023047;
 }
-.visual{
-    background-color: orange;
-}
-.main{
-    background-color: aqua;
-    height: 50vh;
+
+.main {
+    background-color: #a5a58d;
+    display: flow-root;
+    padding: 30px 15px;
+    min-height: 450px;
+    /* height: 50vh;
     display: flex;
     padding: 30px;
-    justify-content: space-between;
+    justify-content: space-between; */
 }
-.group{
-    /* flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 100%; */
+
+/* .main::after {
+    content: '';
+    clear: both;
+    display: block;
+} */
+
+.group {
+    margin: 0 15px;
 }
-.group1{
-    background-color: tomato;
+
+.group1 {
+    background-color: #bf9aca;
+    float: left;
     width: 250px;
 }
-.group2{
-    background-color: olive;
+
+.group2 {
+    background-color: #c7e8f3;
     width: 380px;
-    order: -1;
+    float: left;
 }
-.group3{
-    background-color: brown;
+
+.group3 {
+    background-color: #8e4162;
     width: 190px;
+    float: left;
 }
-.slogan{
-    background-color: limegreen;
+
+.slogan {
+    background-color: #006d77;
 }
-.footer{
-    background-color: violet;
+
+.footer {
+    background-color: #dfe7fd;
 }
