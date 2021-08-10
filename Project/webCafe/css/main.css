@@ -12,7 +12,32 @@ body{
     margin: 0 auto;
 }
 .header{
-    background-color: yellow;
+    background-color: blue;
+    position: relative;
+}
+.logo{
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: 0;
+}
+.member-service{
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+}
+.member-service li{
+    padding:0.5em;
+    text-transform: uppercase;
+}
+.member-service li:nth-child(3){
+    margin-right: auto;
+}
+.member-service a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5em;;
 }
 .visual{
     background-color: orange;
