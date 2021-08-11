@@ -5,10 +5,30 @@
 *::after {
     box-sizing: border-box;
 }
-a{
+
+a {
     text-decoration: none;
     color: inherit;
 }
+
+/* 숨김 콘텐츠 */
+.a11y-hidden {
+    /* utility class */
+    background-color: red;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    /*최소한 값을 줘야 커서가 포인팅 됨*/
+    margin: -1px;
+    clip: rect(0 0 0 0);
+    /*clip-path가 먹지 않는 구형 브라우저용*/
+    clip: rect(0, 0, 0, 0);
+    /*clip-path가 먹지 않는 구형 브라우저용*/
+    /* clip-path: inset(50%); */
+    /* clip-path: polygon(0 0, 0 0, 0 0); */
+    overflow: hidden;
+}
+
 body {
     font-family: 'Spoqa Han Sans Neo', sans-serif;
     font-weight: 400;
@@ -16,7 +36,7 @@ body {
 }
 
 .container {
-    background-color: gray;
+    background: url(./images/bg_flower.png) no-repeat 50% 0, #eee linear-gradient(#ccc 0%, #eee 35%, #eee 50%, #fff 100%);
 }
 
 .header,
@@ -30,8 +50,8 @@ body {
 .header {
     background-color: #fff;
     position: relative;
+    padding: 0 30px;
     border-radius: 0 0 15px 15px;
-    padding: 0 30px 40px;
 }
 
 .logo {
@@ -43,37 +63,214 @@ body {
     font-size: 1rem;
     line-height: 1;
 }
-.logo a, .logo img{
+
+.logo a,
+.logo img {
     display: block;
 }
 
 /* 안내 링크 */
-.member-service{
+.member-service {
     /* display: flex;
     justify-content: flex-end; */
     list-style: none;
-    margin:0;
+    margin: 0;
     padding-left: 0;
     font-size: 0;
     line-height: 0;
     text-align: right;
     padding: 2px 0;
+    /* margin-right: -10px; */
+    /* position: relative;
+    right: -10px; */
 }
-.member-service li{
+
+.member-service li {
     display: inline-block;
     font-size: 0.875rem;
     line-height: 1.15;
 }
-.member-service li a{
+
+.member-service li a {
     display: inline-block;
     padding: 8px;
     text-transform: uppercase;
 }
-.member-service li:nth-child(n+2):before{
+
+.member-service li:nth-child(n+2):before {
     content: ':';
 }
+
+.member-service li:last-child a {
+    padding-right: 0;
+}
+
+/* 메인 메뉴 */
+.navigation {
+    padding: 5px 0 45px;
+}
+
+.menu {
+    /* background-color: orange; */
+    background: #e85b2c linear-gradient(to bottom, #e8882e 0%, #e85b2c 35%, #e85b2c 70%, #e8882e 100%);
+    margin: 0;
+    padding-left: 225px;
+    list-style: none;
+    /* display: flex; */
+    height: 45px;
+    box-shadow: 0 -2px 0 0 #000;
+    border-radius: 0 0 5px 5px;
+}
+
+.menu-item {
+    position: relative;
+    float: left;
+}
+
+.is-active .menu-button {
+    color: #ff0;
+}
+
+.menu-button {
+    border: 0;
+    border-left: 2px solid rgba(255, 255, 255, 0.7);
+    padding: 0 19px;
+    line-height: 45px;
+    font-weight: 700;
+    background-color: transparent;
+    color: #fff;
+    /* font-size: 1.0625rem; */
+    font-size: 15px;
+    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000;
+    cursor: pointer;
+    /* text-decoration: underline #000;
+    text-underline-offset: 14px; */
+}
+
+.is-active .menu-button::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: #000;
+}
+
+.sub-menu {
+    position: absolute;
+    top: 50PX;
+    display: none;
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    white-space: nowrap;
+}
+
+.menu-html,
+.menu-css,
+.menu-standards {
+    left: 0;
+}
+
+.menu-accessibility,
+.menu-qna,
+.menu-archive {
+    right: 0;
+}
+
+.is-active .sub-menu {
+    display: block;
+}
+
+.sub-menu li {
+    display: inline-block;
+}
+
+.sub-menu a {
+    display: inline-block;
+    padding: 8px 0;
+    margin-right: 10px;
+    ;
+}
+
+.sub-menu a::before {
+    content: '\f192';
+    font-family: 'fontello';
+    font-weight: normal;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    margin-left: .2em;
+}
+
+.sub-menu a:hover,
+.sub-menu a:focus {
+    color: #f00;
+}
+
+.sub-menu a:hover::before,
+.sub-menu a:focus::before {
+    content: '\e800';
+}
+
+@keyframes moveEffect {
+    0% {
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0);
+        transform: translate(0, 0);
+    }
+
+    100% {
+        font-size: 24px;
+        color: rgba(0, 0, 0, 1);
+        transform: translate(400px, 75px);
+    }
+}
+@keyframes fadeEffect {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
 .visual {
-    background-color: #023047;
+    height: 120px;
+    position: relative;
+}
+
+.visual::before,
+.visual::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    animation: fadeEffect 2000ms infinite alternate;
+}
+
+.visual::before {
+    background-image: url(./images/ani_flower_01.png), url(./images/ani_flower_02.png);
+    background-position: 0 -10px, 670px 0;
+}
+
+.visual::after {
+    background-image: url(./images/ani_flower_03.png), url(./images/ani_flower_04.png);
+    background-position: 300px 0, 800px 0;
+    animation-delay: 1000ms;
+}
+
+.visual-text {
+    display: inline-block;
+    animation-name: moveEffect;
+    animation-duration: 3000ms;
+    animation-fill-mode: forwards;
+    margin: 0;
 }
 
 .main {
