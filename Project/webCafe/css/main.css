@@ -12,7 +12,8 @@ a {
 }
 
 /* 숨김 콘텐츠 */
-.a11y-hidden {
+.a11y-hidden,
+legend {
     /* utility class */
     background-color: red;
     position: absolute;
@@ -229,14 +230,17 @@ body {
         transform: translate(400px, 75px);
     }
 }
+
 @keyframes fadeEffect {
-    0%{
+    0% {
         opacity: 1;
     }
-    100%{
+
+    100% {
         opacity: 0;
     }
 }
+
 .visual {
     height: 120px;
     position: relative;
@@ -278,40 +282,148 @@ body {
     display: flow-root;
     padding: 30px 15px;
     min-height: 450px;
-    /* height: 50vh;
-    display: flex;
-    padding: 30px;
-    justify-content: space-between; */
 }
-
-/* .main::after {
-    content: '';
-    clear: both;
-    display: block;
-} */
 
 .group {
     margin: 0 15px;
+    float: left;
 }
 
 .group1 {
     background-color: #bf9aca;
-    float: left;
     width: 250px;
 }
+
 
 .group2 {
     background-color: #c7e8f3;
     width: 380px;
-    float: left;
 }
 
 .group3 {
     background-color: #8e4162;
     width: 190px;
+}
+
+/* 로그인 */
+.login {
+    background: radial-gradient(circle at right top, #e8882e, #e85b2c);
+    border-radius: 5px;
+    box-shadow: 5px 5px 0 0 #ccc;
+    padding: 10px;
+}
+
+.login .login-heading {
+    margin: 0 0 10px 10px;
+    font-size: 1rem;
+    color: #ff0;
+}
+
+.login-form {
+    background: #fff;
+    padding: 10px 10px 0 10px;
+    border-radius: 5px 5px 0 0;
+}
+
+.login fieldset {
+    position: relative;
+    padding: 0 0 10px 0;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.user-password {
+    margin-top: 5px;
+}
+
+.login-form label {
+    display: inline-block;
+    font-size: 0.8125em;
+    width: 4em;
+}
+
+.login-form input {
+    width: 100px;
+    height: 22px;
+    border: 1px solid #ccc;
+    padding-left: 0.5em;
+    vertical-align: top;
+}
+
+.button-login {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgb(241, 95, 16);
+    border: 1px solid #e8882e;
+    color: #fff;
+    height: 50px;
+    width: 50px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.sign {
+    margin: 0;
+    list-style: none;
+    background: #fff;
+    padding: 10px 10px 10px 10px;
+    border-radius: 0 0 5px 5px;
+    font-size: 0.8125rem;
+}
+
+.sign a::before {
+    color: rgb(241, 95, 16);
+    content: '\e803';
+    font-family: 'fontello';
+    font-weight: normal;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    margin-left: .2em;
+}
+
+.sign::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.signup {
     float: left;
 }
 
+.find {
+    float: right;
+}
+
+/* 유효성 검사 배너 */
+.validation-list {
+    margin: 25px 0 0 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.validation-list a {
+    display: block;
+    padding:6px 10px 6px 45px;
+    background: url(./images/validation_icon.png) no-repeat 20px 50%, #eee linear-gradient(to bottom, #ccc, #eee);
+    margin-top: 10px;
+    border: 1px solid #aaa;
+    border-radius: 20px;
+}
+
+.validation-list a:hover,
+.validation-list a:focus {
+    color: #f00;
+}
+
+/* 슬로건 */
 .slogan {
     background-color: #006d77;
 }
