@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 미디어(video 요소)</title>
+    <link rel="stylesheet" href="./css/responsive.css">
+</head>
+
+<body>
+    <h1>반응형 미디어(video 요소)</h1>
+    <figure>
+        <!-- <video class="fullsize" src="./video/stories.mp4"></video> -->
+        <video class="fullsize" poster="./video/poster.jpg">
+            <source src="./video/Google Developer Stories.mp4" type="video/mp4" />
+            <source src="./video/Google Developer Stories.mov" type="video/mov" />
+            <source src="./video/Google Developer Stories.ogg" type="video/ogg" />
+            <source src="./video/Google Developer Stories.webm" type="video/webm" />
+            <track src="./video/google-developer-stories-subtitles-en.vtt" kind="captions" srclang="en" label="English Caption" />
+        </video>
+    </figure>
+</body>
+
+</html>

@@ -212,7 +212,8 @@
                 <form method="POST" action="https://formspree.io/seulbinim@gmail.com" class="search-form">
                     <fieldset>
                         <legend>검색 폼</legend>
-                        <label for="search"><span class="icon-search" aria-hidden="true"></span>자료검색</label><input type="search" id="search" name="search" required placeholder="검색어를 입력하세요">
+                        <label for="search"><span class="icon-search" aria-hidden="true"></span>자료검색</label><input
+                            type="search" id="search" name="search" required placeholder="검색어를 입력하세요">
                         <button class="button-search" type="submit">검색</button>
                     </fieldset>
                 </form>
@@ -238,11 +239,13 @@
                                 <time datetime="2021-08-16T15:45:30">2021.08.16</time>
                             </li>
                             <li>
-                                <a href="#"><span class="icon icon-dot-circled"></span>여러분들이 생각하는 웹 접근성에 대해 이야기를 나누어 봅시다.</a>
+                                <a href="#"><span class="icon icon-dot-circled"></span>여러분들이 생각하는 웹 접근성에 대해 이야기를 나누어
+                                    봅시다.</a>
                                 <time datetime="2021-08-16T15:45:30">2021.08.16</time>
                             </li>
                         </ul>
-                        <a href="#" class="more" aria-labelledby="noticeHeading"><span class="icon icon-plus" aria-hidden="true"></span>더보기</a>
+                        <a href="#" class="more" aria-labelledby="noticeHeading"><span class="icon icon-plus"
+                                aria-hidden="true"></span>더보기</a>
                     </section>
                     <section class="pds">
                         <h2 class="a11y-hidden" id="pdsHeading">자료실</h2>
@@ -269,14 +272,113 @@
                                 <time datetime="2021-09-30T15:45:30">2021.09.30</time>
                             </li>
                         </ul>
-                        <a href="#" class="more" aria-labelledby="pdsHeading"><span class="icon icon-plus" aria-hidden="true"></span>더보기</a>
+                        <a href="#" class="more" aria-labelledby="pdsHeading"><span class="icon icon-plus"
+                                aria-hidden="true"></span>더보기</a>
                     </section>
                 </div>
+                <section class="news">
+                    <h2 class="news-heading" id="news">새소식</h2>
+                    <a href="#" class="news-link">
+                        <article class="news-article">
+                            <h3 class="news-article-subject">
+                                W3C 사이트가 리뉴얼 되었습니다.
+                            </h3>
+                            <time class="news-article-date" datetime="2020-08-17">2021.08.17</time>
+                            <p class="news-article-brief">
+                                디자인 및 다양한 view 환경을 고려하여 구성되어 있으며,
+                                기존보다 최신 정보 및 개발자를 위한 기술 가이드도
+                                찾기 쉽도록 구성되어 있습니다.
+                            </p>
+                            <figure class="news-article-thumbnail">
+                                <img src="./assets/news.gif" alt="W3C 리뉴얼">
+                                <figcaption>W3C 리뉴얼</figcaption>
+                            </figure>
+                        </article>
+                    </a>
+                    <a href="#" class="more" aria-labelledby="news"><span class="icon icon-plus"></span>더보기</a>
+                </section>
             </div>
-            <div class="group group3"></div>
+            <div class="group group3">
+                <div class="gradient-box">
+                    <section class="event">
+                        <h2 class="event-heading">신규 <span class="accent-color">이벤트</span></h2>
+                        <div id="eventDetail">
+                            <p class="event-thumbnail">
+                                <img src="./assets/free_gift.gif" alt="이벤트 경품 : 웹표준 핵심 가이드북 2 HTML5+CSS3 도서 증정" />
+                            </p>
+                            <p class="event-brief">
+                                <em>웹표준 핵심 가이드북 2 출시!</em> 선착순 500명 한정으로 증정.
+                            </p>
+                        </div>
+                        <div class="event-button-group">
+                            <!-- aria-label 이용해서 쉽게 작업 가능
+                            <button type="button" class="event-button-prev" aria-label="이전 이벤트 보기"></button>
+                            <button type="button" class="event-button-next" aria-label="다음 이벤트 보기"></button>
+                            -->
+                            <button type="button" class="event-button-prev">이전 이벤트 보기</button>
+                            <button type="button" class="event-button-next">다음 이벤트 보기</button>
+                        </div>
+                    </section>
+                    <section class="related">
+                        <h2 class="related-heading">관련 <span class="accent-color">사이트</span></h2>
+                        <ul class="related-list" tabindex="0">
+                            <li><a href="#">패스트 캠퍼스</a></li>
+                            <li><a href="#">W3C</a></li>
+                            <li><a href="#">CSS ZenGarden</a></li>
+                            <li><a href="#">Web Standards</a></li>
+                            <li><a href="#">웹접근성 연구소</a></li>
+                        </ul>
+                    </section>
+                </div>
+                <section class="gradient-box favorite">
+                    <h2 class="favorite-heading" id="favorite">인기 <span class="accent-color">사이트</span></h2>
+                    <ol class="favorite-list">
+                        <li class="no1"><a href="#">W3C</a><em class="up">상승</em></li>
+                        <li class="no2"><a href="#">Web Standards</a><em class="down">하락</em></li>
+                        <li class="no3"><a href="#">CSS ZenGarden</a><em class="stop">멈춤</em></li>
+                        <li class="no4"><a href="#">Zero Base</a><em class="up">상승</em></li>
+                    </ol>
+                    <a href="#" class="more" aria-labelledby="favorite"><span class="icon icon-plus"></span>더보기</a>
+                </section>
+            </div>
         </main>
-        <article class="slogan">슬로건</article>
-        <footer class="footer">푸터</footer>
+        <article class="slogan">
+            <h2 class="solgan-heading" title="웹카페에서 웹표준을...">슬로건</h2>
+            <p class="slogan-content">
+                <q cite="https://w3.org/WAI">
+                    The power of the Web is in its universality,
+                    Access by everyone regardless of disability is an essential aspect.
+                </q>
+                <span>Tim Berners - Lee , W3C Director and inventor of the World Wide Web</span>
+            </p>
+            <footer class="a11y-hidden">출처 : W3C, http://w3.org/WAI/</footer>
+        </article>
+        <div class="footer-bg">
+            <footer class="footer">
+                <a href="#" class="footer-logo">
+                    <img src="./assets/footer_logo.png" alt="web cafe">
+                </a>
+                <ul class="guide-list">
+                    <li><a href="#">회사 소개</a></li>
+                    <li><a href="#">개인정보 보호정책</a></li>
+                    <li><a href="#">이메일주소 무단수집 거부</a></li>
+                    <li><a href="#">contact us</a></li>
+                    <li><a href="#">site map</a></li>
+                </ul>
+                <address class="address">
+                    <span>서울시 강남구 역삼동 718-5</span>
+                    <span>전화 : 02-3429-5114</span>
+                    <span>email : <a href="mailto:seulbinim@gmail.com?subject='문의사항'">seulbinim@gmail.com</a></span>
+                </address>
+                <small class="copyright">
+                    Copyright since &copy; 2010 by Web Cafe CORPORATION ALL RIGHTS RESERVED.
+                </small>
+                <div class="badge">
+                    <img class="badge-html" src="assets/html5_logo.png" alt="최신 표준인 HTML5를 사용하여 마크업 했습니다.">
+                    <img class="badge-css" src="assets/css3_logo.png" alt="최신 기술인 CSS3를 활용하여 디자인 했습니다.">
+                </div>
+            </footer>
+        </div>
     </div>
     <script src="./js/main.js"></script>
 </body>

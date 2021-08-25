@@ -1,0 +1,127 @@
+@use './../utils'as *;
+@use './../components'as *;
+
+.appHeader {
+    @include mobile {
+        position: relative;
+        @include flexbox(column);
+        background-color: $darkbrown;
+        padding: 0 rem(20px);
+    }
+
+    @include desktop {
+        @include boxSizeMax($paddingX: 20px);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 50px 50px;
+        grid-template-areas: "logo member"
+                             "logo search";
+    }
+
+    // 로고
+    .logo {
+        @include desktop {
+            // grid-column: 1 / 2;
+            // grid-row: 1 / 3;
+            grid-area: logo; // 1 / 1 / 3 / 2
+            align-self: center;
+        }
+
+        &__link {
+            $w: rem(204px);
+            $h: rem(59px);
+            display: block;
+            width: $w;
+            height: $h;
+            @include bgRetina('webcafe-logo', 'png', $w, $h);
+        }
+    }
+
+    // 멤버링크
+    .memberOnly {
+        @include flexbox(row, flex-end);
+        padding: rem(16px) 0;
+
+        @include mobile {
+            order: -1;
+            color: $white;
+            font-size: rem(14px);
+        }
+
+        @include desktop {
+            grid-area: member;
+        }
+
+        .divider {
+            margin: 0 rem(8px);
+        }
+
+        a {
+            padding: rem(8px) 0;
+        }
+    }
+
+    // 검색
+    .searchForm {
+        @include desktop {
+            grid-area: search;
+        }
+
+        &__group {
+            @include flexbox(row, flex-start, center);
+
+            @include mobile {
+                padding: rem(16px) 0;
+            }
+
+            .formInput {
+                flex-grow: 1;
+            }
+
+            .button--primary {
+                margin-left: rem(8px);
+            }
+        }
+    }
+
+    // 메인메뉴 제어 버튼
+    .button--burger {
+
+        // 모바일 버튼
+        @include mobile {
+            width: rem(36px);
+            height: rem(36px);
+            position: absolute;
+            top: rem(56px);
+            right: rem(20px);
+            overflow: hidden;
+
+            &BarTop,
+            &BarMiddle,
+            &BarBottom {
+                transition: all 250ms;
+            }
+        }
+
+        @include desktop {
+            display: none;
+        }
+
+    }
+
+    .is-active {
+        .button--burgerBarTop {
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        .button--burgerBarMiddle {
+            transform: translate(-100%, -50%);
+        }
+
+        .button--burgerBarBottom {
+            top: 50%;
+            transform: translateY(-50%) rotate(-45deg);
+        }
+    }
+}

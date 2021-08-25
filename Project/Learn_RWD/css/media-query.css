@@ -1,0 +1,67 @@
+@import url(./base.css);
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* 공통 */
+
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    min-height: 100vh;
+}
+
+.header, .navigation, .main, .footer{
+    width: 100%;
+    min-height: 10vh;
+}
+
+.header {
+    background-color: var(--yellow);
+}
+
+.navigation {
+    background-color: var(--pink);
+}
+
+.main {
+    background-color: var(--blue);
+}
+
+.content {
+    background-color: var(--coral);
+}
+
+.sidebar {
+    background-color: var(--tomato);
+}
+.footer{
+    background-color: var(--violet);
+}
+
+@media screen and (max-width:767px) {
+}
+@media screen and (min-width:768px) {
+    .container{
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .main{
+        display: flex;
+        flex-flow: row nowrap;
+        flex-grow: 1;
+        justify-content: space-between;
+    }
+    .content{
+        width: 78.125%;
+    }
+    .sidebar{
+        width: 19.53125%;
+    }
+}

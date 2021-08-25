@@ -1,0 +1,385 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css);
+@import url(./reset.css);
+
+:root {
+    --gray: #E0E0E0;
+    --silver: #F5F5F5;
+    --tomato: #CD5C5C;
+    --coral: #ED8E7C;
+    --green: #CDF3A2;
+    --violet: #9B72AA;
+    --pink: #FFC0CB;
+    --yellow: #FFE194;
+    --blue: #2e437c;
+    --cyan: #4CA1A3;
+    --black: #0f0f0f;
+    --black2: #464646;
+
+    --primary: var(--blue);
+}
+
+/* animaiton */
+@keyframes moveFromLeft {
+    0% {
+        transform: translateX(-4rem);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveFromRight {
+    0% {
+        transform: translateX(4rem);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveFromTop {
+    0% {
+        transform: translateY(4rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+body {
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
+
+.container {
+    /* background-color: var(--gray); */
+}
+
+/* 헤더 */
+.header-container {
+    border-bottom: 1px solid var(--gray);
+}
+
+.header {
+    /* background-color: var(--pink); */
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+/* 브랜드 로고 */
+.brand {
+    font-size: 1em;
+    /* background-color: var(--yellow); */
+    width: 46.93333333333333%;
+    max-width: 200px;
+}
+
+.brand a {
+    display: inline-block;
+    padding: 1.125rem;
+}
+
+/* 메뉴 */
+.ediya-menu {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1.125rem;
+}
+
+.ediya-menu__item {
+    position: relative;
+    background: var(--silver);
+    flex: 1 1 40%;
+    /* display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto; */
+    animation: sliding-top 1s;
+}
+
+.ediya-menu__item a {
+    display: block;
+    background-color: var(--silver);
+    color: var(--black2);
+    /* grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-start: 2; */
+}
+
+.ediya-menu__item figure {
+    margin: 0;
+    color: var(--black);
+    padding-top: 1.25rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.ediya-menu__item img {
+    transform: scale(0.85);
+    transition: all 400ms ease;
+    -webkit-user-select: none;
+    user-select: none;
+    vertical-align: top;
+}
+
+.ediya-menu__item figcaption {
+    margin-bottom: 2.812rem;
+}
+
+.ediya-menu__item a:hover img {
+    transform: scale(1);
+}
+
+.ediya-menu__item--detail {
+    opacity: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--gray);
+    padding: 1.875rem 1.25rem;
+    /* grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-start: 2; */
+    display: flex;
+    flex-flow: column nowrap;
+    transition: all 400ms ease;
+}
+
+.ediya-menu__item--detail.is-active {
+    opacity: 1;
+}
+
+.ediya-menu__item--name {
+    color: #202022;
+    font-size: 1.125rem;
+    border-bottom: 2px solid currentColor;
+    padding-bottom: 1.125rem;
+}
+
+.ediya-menu__item--name [lang="en"] {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--gray);
+}
+
+.ediya-menu__item--detail p {
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.ediya-menu__item--multi-column {
+    background-color: var(--silver);
+    column-count: 2;
+    column-rule: 2px solid var(--black2);
+    margin: 0 -1.25rem -1.875rem;
+    /* position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 0; */
+}
+
+.ediya-menu__item--multi-column dl {
+    margin: 0;
+    overflow: hidden;
+}
+
+.ediya-menu__item--multi-column dt {
+    float: left;
+    width: 40%;
+    margin-left: 10%;
+    margin-top: 0.5rem;
+}
+
+.ediya-menu__item--multi-column dd {
+    float: right;
+    width: 40%;
+    margin-left: 0;
+    margin-right: 10%;
+    margin-top: 0.5rem;
+}
+
+.ediya-menu__item--detail .button-close-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    background: transparent;
+    color: var(--gray);
+}
+
+/* 모바일 */
+@media screen and (max-width:767px) {
+    .header-container{
+        background: yellow;
+        animation: moveFromTop 600ms forwards;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+    }
+    .header {
+        justify-content: space-between;
+        flex-flow: row nowrap;
+    }
+
+    .brand {
+        animation-name: moveFromLeft;
+        animation-duration: 500ms;
+        animation-fill-mode: forwards;
+    }
+
+    .header .button-open-menu {
+        user-select: none;
+        padding: 0;
+        background-color: #fff;
+        animation-name: moveFromRight;
+        animation-duration: 400ms;
+        animation-fill-mode: forwards;
+        animation-delay: 150ms;
+        animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
+    .header .button-open-menu .ir {
+        display: block;
+        width: 3.125rem;
+        height: 3.125rem;
+        background-image: url(./../images/button-navigation.svg);
+        background-repeat: no-repeat;
+        transition: all .3s ease;
+    }
+
+    .header .button-open-menu:hover .ir {
+        background-color: #f5f5f5;
+        box-shadow: 0 0 1px 1px #eee;
+    }
+
+    .navigation {
+        display: none;
+        background-color: hsla(225, 57%, 10%, 0.9);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        color: #fff;
+        padding-top: 3.5rem;
+        transform: translateX(105vw);
+        transition: all 400ms ease;
+        backdrop-filter: blur(20px);
+    }
+
+    .navigation.is-active {
+        transform: translateX(0vw);
+    }
+
+    .navigation li {
+        border-bottom: 1px solid hsla(225, 57%, 30%, 0.5);
+    }
+
+    .navigation a {
+        display: block;
+        padding: 1rem;
+        transition: all 400ms ease-in;
+    }
+
+    .navigation a:hover,
+    .navigation a:focus {
+        background-color: var(--primary);
+    }
+
+    .button-close-menu {
+        position: absolute;
+        top: 0.625rem;
+        right: 0.625rem;
+        padding: 0.5rem;
+        color: inherit;
+        border: 0;
+        background-color: transparent;
+        transition: all 400ms ease-in-out;
+    }
+
+    .button-close-menu:hover,
+    .button-close-menu:focus {
+        transform: scale(1.5);
+    }
+
+    .ediya-drink {
+        padding: 1.125rem;
+    }
+
+    .ediya-menu li {
+        margin-bottom: 1.125rem;
+    }
+    .ediya-menu__item{
+        animation-name: moveFromTop;
+    }
+    .ediya-menu__item:nth-child(1){
+        animation-duration: 800ms;
+    }
+    .ediya-menu__item:nth-child(2){
+        animation-duration: 1000ms;
+    }
+    .ediya-menu__item:nth-child(3){
+        animation-duration: 1200ms;
+    }
+    .ediya-menu__item:nth-child(4){
+        animation-duration: 1400ms;
+    }
+}
+
+/* 태블릿 이상 */
+@media screen and (min-width:768px) {
+    .header {
+        max-width: 75em;
+        margin: 0 auto;
+    }
+
+    .brand {
+        margin-right: auto;
+    }
+
+    .button-open-menu,
+    .button-close-menu {
+        display: none;
+    }
+
+    .navigation {
+        padding-right: 1.125rem;
+    }
+
+    .navigation ul {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+
+    .navigation li {
+        margin-left: 0.5rem;
+    }
+
+    .is-selected {
+        font-weight: 700;
+    }
+
+    .navigation a {
+        color: var(--primary);
+        display: block;
+        padding: 0.875rem 0;
+    }
+
+    .ediya-drink {
+        padding: 1.875rem 1.125rem;
+        max-width: 48rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

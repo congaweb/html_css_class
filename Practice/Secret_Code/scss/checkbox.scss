@@ -1,0 +1,57 @@
+@use './base'as *;
+@use './color'as *;
+@use './function'as *;
+@use './form'as *;
+
+.icon {
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden;
+
+    &-checkbox--square {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: rem(18px);
+        height: rem(18px);
+        background-image: url(../assets/sprite-checkbox-square.png);
+        background-repeat: no-repeat;
+    }
+}
+
+.form-checkbox {
+    position: relative;
+
+    &__checkbox {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: rem(18px);
+        height: rem(18px);
+        cursor: pointer;
+
+        &:disabled + .icon-checkbox--square {
+            cursor: not-allowed;
+        }
+    }
+
+    &__checkbox:checked + &__label .icon-checkbox--square{
+        background-position: -20px 0;
+    }
+
+    &__checkbox:disabled + &__label .icon-checkbox--square{
+        background-position: -40px 0;
+    }
+
+    &__checkbox:checked:disabled + &__label .icon-checkbox--square{
+        background-position: -60px 0;
+    }
+
+    &__label {
+        position: relative;
+        height: rem(18px);
+        line-height: rem(18px);
+        padding-left: rem(22px);
+    }
+}

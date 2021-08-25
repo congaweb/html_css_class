@@ -1,0 +1,19 @@
+:root {
+    --gray: #E8F0F2;
+    --tomato: #CD5C5C;
+    --coral: #ED8E7C;
+    --green: #CDF3A2;
+    --violet: #9B72AA;
+    --pink: #FFC0CB;
+    --yellow: #FFE194;
+    --blue: #77ACF1;
+    --cyan: #4CA1A3;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
