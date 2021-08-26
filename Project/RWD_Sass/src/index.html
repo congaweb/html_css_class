@@ -29,27 +29,20 @@
       <div class="app">
         <header class="appHeader">
           <h1 class="logo">
-            <a href="index.html"
-               class="logo__link"
-               aria-label="Web Cafe">
+            <a href="index.html" class="logo__link" aria-label="Web Cafe">
             </a>
           </h1>
           <ul class="memberOnly">
             <li><a href="/">로그인</a></li>
-            <li><span class="divider"
-                    aria-hidden="true">ㅣ</span><a href="/">회원가입</a></li>
-            <li><span class="divider"
-                    aria-hidden="true">ㅣ</span><a href="/">커뮤니티</a></li>
+            <li><span class="divider" aria-hidden="true">ㅣ</span><a href="/">회원가입</a></li>
+            <li><span class="divider" aria-hidden="true">ㅣ</span><a href="/">커뮤니티</a></li>
           </ul>
-          <form action="https://formspree.io/seulbinim@gmail.com"
-                method="POST"
-                class="searchForm">
+          <form action="https://formspree.io/seulbinim@gmail.com"method="POST" class="searchForm">
             <fieldset>
               <legend>검색</legend>
               <div class="searchForm__group">
                 <div class="formInput">
-                  <label for="search"
-                         class="a11yHidden formInput__label">검색어</label>
+                  <label for="search" class="a11yHidden formInput__label">검색어</label>
                   <input id="search"
                          class="formInput__input"
                          type="search"
@@ -75,31 +68,26 @@
           <h2 class="a11yHidden">메인 메뉴</h2>
           <ul class="menu__list">
             <li class="menu__item">
-              <a href="#"
-                 class="menu__link">HTML에 대해</a>
+              <a href="#" class="menu__link">HTML에 대해</a>
             </li>
             <li class="menu__item">
-              <a href="#"
-                 class="menu__link">CSS에 대해</a>
+              <a href="#" class="menu__link">CSS에 대해</a>
             </li>
             <li class="menu__item">
-              <a href="#"
-                 class="menu__link">웹표준/웹접근성</a>
+              <a href="#" class="menu__link">웹표준/웹접근성</a>
             </li>
             <li class="menu__item">
-              <a href="#"
-                 class="menu__link">묻고 답하기</a>
+              <a href="#" class="menu__link">묻고 답하기</a>
             </li>
             <li class="menu__item">
-              <a href="#"
-                 class="menu__link">자료실</a>
+              <a href="#" class="menu__link">자료실</a>
             </li>
           </ul>
         </nav>
         <main class="appMain homeMain">
           <section class="book">
             <h2 class="book__title sprite spriteBook">
-              추천서적<span class="book__enTitle themeGreen">Recommend Book</span>
+              추천서적<span class="book__enTitle themeGreen" lang="en">Recommend Book</span>
             </h2>
             <figure class="book__cover">
               <img src="./assets/images/book_rwd.jpg"
@@ -132,10 +120,10 @@
           </section>
           <section class="news">
             <h2 class="news__title sprite spriteNews">
-              새소식 <span class="news__enTitle themeYellow">WebCafe News</span>
+              새소식 <span class="news__enTitle themeYellow" lang="en">WebCafe News</span>
             </h2>
             <figure class="news__videoContainer">
-              <video class="news__video"
+              <!-- <video class="news__video"
                      poster="./assets/media/poster.jpg"
                      controls>
                 <source src="./assets/media/stories.mp4"
@@ -144,7 +132,10 @@
                        kind="captions"
                        srclang="en"
                        label="English Caption" />
-              </video>
+              </video> -->
+              <div class="news__iframeContainer">
+                <iframe src="https://www.youtube.com/embed/3_WXZxvYboM" frameborder="0" allowfullscreen></iframe>
+              </div>
               <figcaption class="a11yHidden">구글 개발자 이야기</figcaption>
             </figure>
             <p class="news__summary">
@@ -163,7 +154,7 @@
           </section>
           <section class="board">
             <h2 class="board__title sprite spriteBoard">
-              게시판<span class="board__enTitle themeBrown">WebCafe Board</span>
+              게시판<span class="board__enTitle themeBrown" lang="en">WebCafe Board</span>
             </h2>
             <ul class="board__list">
               <li class="board__item">
@@ -210,7 +201,7 @@
           </section>
           <section class="favorite">
             <h2 class="favorite__title sprite spriteFavorite">
-              인기 사이트<span class="favorite__enTitle themeOrange">Favorite Site</span>
+              인기 사이트<span class="favorite__enTitle themeOrange" lang="en">Favorite Site</span>
             </h2>
             <ol class="favorite__list">
               <li class="favorite__item">
@@ -261,7 +252,7 @@
           </section>
           <article class="twitter">
             <h2 class="twitter__title sprite spriteTwitter">
-              트위터<span class="twitter__enTitle themeBlue">WebCafe Twitter</span>
+              트위터<span class="twitter__enTitle themeBlue" lang="en">WebCafe Twitter</span>
             </h2>
             <div class="twitter__container">
               <dl class="twitter__userInfo">

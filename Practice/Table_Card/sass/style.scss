@@ -1,0 +1,210 @@
+@use './a11y.scss'as *;
+@use './color'as *;
+@use './media-query'as *;
+@use './unit'as *;
+@use './mixin'as *;
+@use './base'as *;
+
+// 주문내역
+.order {
+    padding: rem(32px) rem(24px);
+
+    // 주문 내역 제목
+    &__title {
+        font-size: rem(24px);
+        font-weight: 700;
+        color: $black;
+    }
+
+    // 주문내역 테이블 및 리스트
+    &__list {
+        margin-top: rem(16px);
+        color: $gray1;
+
+        @include desktop {
+            border-top: 1px solid $gray5;
+            overflow-x: auto
+        }
+    }
+
+    // 주문내역 테이블 요약정보
+    &__description {
+        @include a11yHidden;
+    }
+
+    // 테이블 개별 행 또는 카드
+    &__item {
+        @include mobile {
+            @include flexbox(column);
+            border: 1px solid $gray1;
+            margin-top: rem(16px);
+            border-radius: rem(8px);
+            padding: rem(22px) rem(28px);
+        }
+
+        @include desktop {
+            @include flexbox(row);
+            border-bottom: 1px solid $gray5;
+            min-width: 1000px;
+        }
+
+        // 제목 행
+        &--head {
+            @include mobile {
+                display: none;
+            }
+
+            @include desktop {
+                background-color: $gray7;
+                font-weight: 700;
+                padding: rem(8px);
+            }
+        }
+
+        // 내용 행
+        &--body {
+            @include desktop {
+                padding: rem(8px);
+            }
+        }
+    }
+
+    // 주문자
+    &__name {
+        @include desktop {
+            width: 15%;
+        }
+    }
+
+    // 연락처
+    &__phone {
+        @include desktop {
+            width: 15%;
+        }
+    }
+
+    // 주소
+    &__address {
+        @include desktop {
+            width: 40%;
+        }
+    }
+
+    // 주문내역
+    &__detail {
+        @include mobile {
+            order: -1;
+            margin:rem(8px) 0;
+            font-size: rem(24px);
+            font-weight: 700;
+        }
+
+        @include desktop {
+            width: 20%;
+        }
+    }
+
+    // 결제
+    &__payment {
+        @include mobile {
+            order: -2;
+        }
+
+        @include desktop {
+            width: 10%;
+        }
+    }
+
+    // 결제 관련 bedge 스타일
+    &__badge {
+        @include mobile {
+            padding: rem(2px) rem(8px);
+            font-size: rem(10px);
+            font-weight: 700;
+            color: $white;
+            background-color: $gray1;
+            border-radius: rem(4px);
+        }
+
+        &--done{
+            @include mobile{
+                background-color: $primary;
+            }
+        }
+    }
+
+    // data-label 속성이 있는 요소 (.order__name, .order__phone, .order__address)
+    [data-label] {
+        @include mobile{
+            @include flexbox(row, flex-start, baseline);
+            word-break: keep-all;
+            margin-top: rem(4px);
+            color: $gray3;
+        }
+
+
+        &::before {
+            @include mobile{
+                content: attr(data-label);
+                width: em(64px, 16px);
+                flex-shrink: 0;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+// .order{
+//     &__list{
+
+//     }
+
+//     &__item{
+//         &--head{
+//             display: none;
+//         }
+
+//         &--body{
+//             @include flexbox(column);
+//             border-radius: rem(4px);
+//             box-shadow: 0 0 20px rgba($black, 0.3);
+//             margin-bottom: rem(20px);
+//             padding:rem(22px) rem(28px);
+//         }
+//     }
+
+//     &__name, &__phone, &__address{
+//         display: flex;
+//         color: $gray3;
+//         &::before{
+//             content: attr(data-label);
+//             width: rem(60px);
+//             flex-shrink: 0;
+//         }
+//     }
+
+//     &__detail{
+//         order:-1;
+//         margin: rem(12px) 0;
+//         font-size: rem(24px);
+//         font-weight: 700;
+//     }
+
+//     &__payment{
+//         order:-2;
+//     }
+
+//     // 뱃지
+//     &__badge{
+//         display: inline-block;
+//         font-size: rem(10px);
+//         padding: rem(2px) rem(8px);
+//         border-radius: 4px;
+//         color: $white;
+//         background-color: $gray1;
+
+//         &--done{
+//             background-color: $primary;
+//         }
+//     }
+// }

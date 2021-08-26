@@ -1,2 +1,53 @@
-@use './../utils' as *;
-@use './../components' as *;
+@use './../utils'as *;
+@use './../components'as *;
+
+.menu {
+    @include desktop {
+        background: $brown;
+        padding: rem(16px) 0;
+    }
+
+    &__list {
+
+        @include mobile {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translateX(-150%);
+            width: 70%;
+            height: 100vh;
+            background-color: rgba($darkbrown, 0.95);
+            padding: rem(32px);
+            transition: all .2s;
+        }
+
+        @include desktop {
+            @include boxSizeMax($paddingX: rem(20px));
+            @include flexbox(row, space-between, center, nowrap);
+            font-size: rem(18px);
+        }
+    }
+
+    &__item {
+        @include mobile {
+            margin-bottom: rem(16px);
+        }
+    }
+
+    &__link {
+        display: block;
+        padding: rem(8px);
+        font-weight: 500;
+        color: $white;
+
+        @include desktop {
+            text-shadow: 1px 1px #000, -1px -1px #000;
+        }
+    }
+}
+
+.menu.is-active {
+    .menu__list {
+        transform: none;
+    }
+}
